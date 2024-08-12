@@ -25,5 +25,16 @@ search.addEventListener("submit", printCity)
 function printCity(e) {
 e.preventDefault()
 const cityInput = document.querySelector('#city-name').value
-const apiPull = `${apiURL}${cityInput}&appid=${apiKey}`
+const apiPull = `https://${apiURL}${cityInput}&appid=${apiKey}`
+
+fetch(apiPull)
+  .then(response=> response.json())
+  .then(data => console.log(data))
+
+
+
+
+
+  .catch(error => console.error('Error fetching data:', error));
+
 }
