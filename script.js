@@ -1,4 +1,5 @@
-const apiKey = "89638d41ac4d76e85c0eca18872b79bb"
+
+const apiKey = "89638d41ac4d76e85c0eca18872b79bb" //API is free so keep it here.
 const apiURL = "api.openweathermap.org/data/2.5/forecast?q={city name}&appid={API key}"
 
 document.addEventListener('DOMContentLoaded', function() {
