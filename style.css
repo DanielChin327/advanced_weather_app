@@ -5,10 +5,19 @@
   box-sizing: border-box;
 }
 
-
 body{
-  margin: 0px;
-  background-color:black;
+  background: #121212;
+}
+
+#toggle-dark-mode{
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background: #333333;
+  color: #fff;
+  cursor: pointer;
 }
 
 .card {
@@ -107,3 +116,34 @@ body{
   margin-top: 10px;
   display: none;
 }
+
+
+#toggle-dark-mode{
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background: #fff;
+  color: #333333
+}
+
+
+.card {
+  background: linear-gradient(135deg, #333333, #444444);
+}
+
+.search input {
+  background: #222;
+  color: #ffffff;
+}
+
+.search button {
+  background: #333333;
+}
+
+.weather {
+  color: #ffffff;
+}
+
+/* Add other dark mode specific styles here */
