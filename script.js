@@ -11,14 +11,10 @@
 const apiKey = "89638d41ac4d76e85c0eca18872b79bb" //API is free so keep it here.
 const apiURL = "api.openweathermap.org/data/2.5/forecast?q="
 
-
 document.addEventListener('DOMContentLoaded', function() {
 
 const search = document.querySelector('#search')
 search.addEventListener("submit", printCity)
-
-
-
 })
 
 
@@ -30,10 +26,6 @@ const apiPull = `https://${apiURL}${cityInput}&appid=${apiKey}`
 fetch(apiPull)
   .then(response=> response.json())
   .then(data => console.log(data))
-
-
-
-
 
   .catch(error => console.error('Error fetching data:', error));
 
