@@ -38,7 +38,7 @@ function displayWeather(data) {
     weatherCards.innerHTML = "";
     const filteredData = data.list.filter((item, index) => index % 8 === 0);
     filteredData.forEach(day => {
-        const date = new Date(day.dt_txt);
+        const date = new Date(day.dt_txt); // Converts the date
         const dayName = date.toLocaleDateString(undefined, { weekday: 'long' });
         const celsius = Math.round(day.main.temp - 273.15);
         const fahrenheit = Math.round((celsius * 9/5) + 32);
