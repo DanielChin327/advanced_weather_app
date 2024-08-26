@@ -20,7 +20,7 @@ const weatherCards = document.querySelector(".weather-cards");
 const cityNameDisplay = document.querySelector(".city-name");
 
 async function checkWeather(city) {
-    const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
+    const response = await fetch(apiUrl + city + `&appid=${apiKey}`); // using await will make code wait for the fetch to complet first.
     if (response.status === 404) {
         document.querySelector(".error").style.display = "block";
         weatherCards.innerHTML = "";
@@ -36,19 +36,14 @@ async function checkWeather(city) {
 
 function displayWeather(data) {
     weatherCards.innerHTML = "";
-
     const filteredData = data.list.filter((item, index) => index % 8 === 0);
-
     filteredData.forEach(day => {
         const date = new Date(day.dt_txt);
         const dayName = date.toLocaleDateString(undefined, { weekday: 'long' });
-
         const celsius = Math.round(day.main.temp - 273.15);
         const fahrenheit = Math.round((celsius * 9/5) + 32);
-
         const card = document.createElement("div");
         card.classList.add("card");
-
         card.innerHTML = `
             <img src="images/${getWeatherIcon(day.weather[0].main)}.png" alt="Weather Icon">
             <h1>${dayName}</h1>
@@ -57,7 +52,6 @@ function displayWeather(data) {
             <p>Humidity: ${day.main.humidity}%</p>
             <p>Wind: ${day.wind.speed} km/h</p>
         `;
-
         weatherCards.appendChild(card);
     });
 }
