@@ -17,16 +17,20 @@ const apiUrl = "https://api.openweathermap.org/data/2.5/forecast?q=";
 const searchBox = document.querySelector(".search input");
 const searchBtn = document.querySelector(".search button");
 const weatherCards = document.querySelector(".weather-cards");
+const cityNameDisplay = document.querySelector(".city-name");
 
 async function checkWeather(city) {
     const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
     if (response.status === 404) {
         document.querySelector(".error").style.display = "block";
         weatherCards.innerHTML = "";
+        cityNameDisplay.style.display = "none"; // Hide city name on error
     } else {
         const data = await response.json();
         displayWeather(data);
         document.querySelector(".error").style.display = "none";
+        cityNameDisplay.style.display = "block"; // Show city name
+        cityNameDisplay.textContent = `${data.city.name} 5 Day Weather Report`; // Update city name
     }
 }
 
