@@ -127,3 +127,16 @@ body {
 .card p {
   margin-bottom: 5px;
 }
+
+
+/* Media Query for Mobile Devices */
+@media (max-width: 600px) {
+  .weather-cards {
+    flex-direction: column; /* Change to column on smaller screens */
+  }
+
+  .card {
+    width: 80%; /* Make cards full width on smaller screens */
+    margin-bottom: 5px; /* Add some spacing between cards */
+  }
+}
